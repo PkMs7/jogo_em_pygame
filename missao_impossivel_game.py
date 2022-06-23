@@ -7,37 +7,37 @@ largura = 800
 tamanho = (largura, altura)
 pygameDisplay = pygame.display
 pygameDisplay.set_caption("Missão Impossível")
-bg = pygame.image.load("assets/background.jpg")
-bg_destroy = pygame.image.load("assets/bg_preso.png")
+bg = pygame.image.load("assets/images/background.jpg")
+bgFimDeJogo = pygame.image.load("assets/images/bg_preso.png")
 
 
 gameDisplay = pygame.display.set_mode(tamanho)
 gameEvents = pygame.event
 clock = pygame.time.Clock()
 
-gameIcon = pygame.image.load("assets/missao_impossivel_ico.ico")
+gameIcon = pygame.image.load("assets/images/missao_impossivel_ico.ico")
 pygameDisplay.set_icon(gameIcon)
 
 black = (0, 0, 0)
 white = (255, 255, 255)
 
 
-loserSound = pygame.mixer.Sound("assets/perdeu.mp3")
+loserSound = pygame.mixer.Sound("assets/sounds/perdeu.mp3")
 loserSound.set_volume(0.5)
 
-laserSound = pygame.mixer.Sound("assets/laser.mp3")
+laserSound = pygame.mixer.Sound("assets/sounds/laser.mp3")
 laserSound.set_volume(0.5)
 
 
 def dead(pontos):
-    gameDisplay.blit(bg_destroy, (0, 0))
+    gameDisplay.blit(bgFimDeJogo, (0, 0))
     pygame.mixer.music.stop()
     pygame.mixer.Sound.play(loserSound)
     fonte = pygame.font.Font("freesansbold.ttf", 50)
     texto = fonte.render(f"Você foi pego com {str(pontos)} pontos!", True, black)
     gameDisplay.blit(texto, (50, 100))
     fonteContinue = pygame.font.Font("freesansbold.ttf", 25)
-    textoContinue = fonteContinue.render("press enter to restart", True, black)
+    textoContinue = fonteContinue.render("Press enter to restart", True, black)
     gameDisplay.blit(textoContinue, (50, 200))
 
     pygameDisplay.update()
@@ -54,10 +54,10 @@ def jogo():
     movimentoXPlayer = 0
     movimentoYPlayer = 0
     pontos = 0
-    laser = pygame.image.load("assets/laser.png")
+    laser = pygame.image.load("assets/images/laser.png")
     laser = pygame.transform.flip(laser, True, False)
-    player = pygame.image.load("assets/player.png")
-    pygame.mixer.music.load("assets/missao_impossivel.mp3")
+    player = pygame.image.load("assets/images/player.png")
+    pygame.mixer.music.load("assets/sounds/missao_impossivel.mp3")
     pygame.mixer.music.play(-1)
     pygame.mixer.music.set_volume(0.1)
     pygame.mixer.Sound.play(laserSound)
