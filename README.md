@@ -40,4 +40,4 @@ algum ponto da aplicação.
  - [x] É necessário a utilização de funções com retorno no projeto,
 indicando que a mesma teve aplicação real no Game.
 
- - [ ] Deve ser criado um executável do projeto, o qual deve estar no commit final da software.
+ - [x] Deve ser criado um executável do projeto, o qual deve estar no commit final da software.
