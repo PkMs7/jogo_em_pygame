@@ -1,5 +1,12 @@
 import pygame
 import random
+import assets.scripts.functions
+
+print("Informe seu nome completo: ")
+nome = input()
+print("Informe seu e-mail: ")
+email = input()
+assets.scripts.functions.cadastroDeJogador(nome, email)
 
 pygame.init()
 altura = 300
@@ -29,7 +36,7 @@ laserSound = pygame.mixer.Sound("assets/sounds/laser.mp3")
 laserSound.set_volume(0.5)
 
 
-def dead(pontos):
+def pego(pontos):
     gameDisplay.blit(bgFimDeJogo, (0, 0))
     pygame.mixer.music.stop()
     pygame.mixer.Sound.play(loserSound)
@@ -68,8 +75,9 @@ def jogo():
     limiar = 28
     velocidadePlayer = 10
 
+
     while True:
-        # aqui será feito a leitura dos comandos
+        # Leitura dos comandos
         for event in gameEvents.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -84,7 +92,7 @@ def jogo():
                 elif event.key == pygame.K_DOWN:
                     movimentoYPlayer = velocidadePlayer
                 elif event.key == pygame.K_RETURN:
-                    jogo()
+                    assets.scripts.functions.jogo()
 
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT or event.key == pygame.K_UP or event.key == pygame.K_DOWN:
@@ -132,12 +140,12 @@ def jogo():
                     velocidade = velocidade + 1
                     laser = pygame.transform.flip(laser, True, False)
 
-            # atualização de tela
+            # Atualização de tela
             fonte = pygame.font.Font('freesansbold.ttf', 20)
             texto = fonte.render(f"Pontos: {str(pontos)}", True, white)
             gameDisplay.blit(texto, (20, 280))
 
-            # controle de colisão
+            # Controle de colisão
             pixelYLaser = list(range(movimentoY, movimentoY+alturaLaser + 1))
             pixelXLaser = list(range(movimentoX, movimentoX+larguraLaser + 1))
 
@@ -149,7 +157,7 @@ def jogo():
             if len(colisaoY) > limiar:
                 if len(colisaoX) > limiar:
                     jogando =  False
-                    dead(pontos)
+                    pego(pontos)
 
         pygameDisplay.update()
         clock.tick(60)

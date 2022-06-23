@@ -31,10 +31,10 @@ cada uma das etapas desenvolvidas.
 
 2) Abaixo é listado algumas diretrizes técnicas do projeto:
 
- - [ ] Ao abrir a aplicação (terminal), o usuário deve informar o seu nome e e-mail, o
+ - [x] Ao abrir a aplicação (terminal), o usuário deve informar o seu nome e e-mail, o
 qual deve ser registrado em um arquivo de log do sistema (txt).
 
- - [ ] Deve ser aplicado orientação a arquivo (from e import) em
+ - [x] Deve ser aplicado orientação a arquivo (from e import) em
 algum ponto da aplicação.
 
  - [ ] É necessário a utilização de funções com retorno no projeto,
