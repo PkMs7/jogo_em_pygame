@@ -5,7 +5,7 @@ Patrick Marques - 1126427 - patrickmarques_adm@outlook.com
 
 Nesse jogo você se torna o grande galã do cinem Tom Cruise em mais uma "Missão Impossível", dessa vez você terá que invadir um Data Base e extrair o máximo de informações possíveis sem ser pego pelo laser de vigilância. Boa sorte!!!
 
-<!-- ![image] logo do jogo aqui -->
+![image](assets/images/missao_impossivel_readme.jpg)
 
 # Regras de negócio para o desenvolvimento do jogo
 Trabalho de fundamentos de programação - IMED
@@ -37,7 +37,7 @@ qual deve ser registrado em um arquivo de log do sistema (txt).
  - [x] Deve ser aplicado orientação a arquivo (from e import) em
 algum ponto da aplicação.
 
- - [ ] É necessário a utilização de funções com retorno no projeto,
+ - [x] É necessário a utilização de funções com retorno no projeto,
 indicando que a mesma teve aplicação real no Game.
 
  - [ ] Deve ser criado um executável do projeto, o qual deve estar no commit final da software.
